@@ -1,0 +1,25 @@
+{
+  "name": "demo-homepage-compose",
+  "description": "Fixture for an agentic flow that plans renderings before writing layout.",
+  "plannedComponents": [
+    {
+      "name": "Hero",
+      "fields": {
+        "heading": "Welcome",
+        "summary": "Composed by agent"
+      }
+    },
+    {
+      "name": "SparkleBanner",
+      "fields": {
+        "text": "Not in the map"
+      }
+    },
+    {
+      "name": "Promo",
+      "fields": {
+        "title": "Missing CTA on purpose"
+      }
+    }
+  ]
+}

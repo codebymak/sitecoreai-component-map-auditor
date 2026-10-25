@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Run fixture audit (expect findings)
+        run: |
+          set +e
+          npm run audit:fixtures
+          code=$?
+          # Fixtures are designed to FAIL the audit (exit 1). Anything else is unexpected.
+          if [ "$code" -ne 1 ]; then
+            echo "Expected audit:fixtures to exit 1, got $code"
+            exit 1
+          fi

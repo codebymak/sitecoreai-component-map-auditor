@@ -1,0 +1,53 @@
+{
+  "name": "sitecoreai-component-map-auditor",
+  "version": "0.1.0",
+  "description": "Audit SitecoreAI / XM Cloud Content SDK component maps against layout JSON and agentic workflow rendering names.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "scai-cmap-audit": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "fixtures",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "audit:fixtures": "node dist/cli.js --map fixtures/component-map.ts --client-map fixtures/component-map.client.ts --layout fixtures/layout-home.json --workflow fixtures/agentic-workflow.json --contracts fixtures/field-contracts.json --scan fixtures/pitfalls-sample",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "sitecore",
+    "sitecoreai",
+    "xm-cloud",
+    "content-sdk",
+    "component-map",
+    "auditor",
+    "marketplace"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codebymak/sitecoreai-component-map-auditor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codebymak/sitecoreai-component-map-auditor/issues"
+  },
+  "homepage": "https://github.com/codebymak/sitecoreai-component-map-auditor#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  }
+}
