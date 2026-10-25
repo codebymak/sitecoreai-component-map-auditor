@@ -1,0 +1,1 @@
+# sitecoreai-component-map-auditor
