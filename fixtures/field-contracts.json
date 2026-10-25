@@ -1,0 +1,14 @@
+{
+  "Hero": {
+    "requiredFields": ["heading", "summary"]
+  },
+  "Promo": {
+    "requiredFields": ["title", "ctaLabel"]
+  },
+  "Title": {
+    "requiredFields": ["Text"]
+  },
+  "ServerOnlyNav": {
+    "requiredFields": ["items"]
+  }
+}
